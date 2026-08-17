@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atul's | Portfolio</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <!-- Google Fonts - Inter & Space Grotesk -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="site-header" id="siteHeader">
+        <nav class="navbar" id="navbar" aria-label="Main Navigation">
+            <div class="navbar__inner">
+
+                <!-- Logo & Availability Badge -->
+                <div class="navbar__brand-wrapper">
+                    <a href="#home" class="navbar__logo" data-link>
+                        Atul Pandey<span class="navbar__logo-dot">.</span>
+                    </a>
+                    <div class="navbar__status-badge" title="Available for freelance & full-time roles">
+                        <span class="status-pulse" aria-hidden="true"></span>
+                        <span class="status-badge__text">Available</span>
+                    </div>
+                </div>
+
+                <!-- Single Unified Navigation Menu -->
+                <div class="navbar__menu" id="navMenu" aria-hidden="false">
+                    <ul class="navbar__links" id="navbarLinks" role="menubar">
+                        <span class="navbar__indicator" id="navIndicator" aria-hidden="true"></span>
+                        <li role="none"><a href="#home" class="navbar__link is-active" data-link role="menuitem"><i
+                                    class="bi bi-house-door nav-icon" aria-hidden="true"></i> Home</a></li>
+                        <li role="none"><a href="#about" class="navbar__link" data-link role="menuitem"><i
+                                    class="bi bi-person nav-icon" aria-hidden="true"></i> About</a></li>
+                        <li role="none"><a href="#skills" class="navbar__link" data-link role="menuitem"><i
+                                    class="bi bi-code-slash nav-icon" aria-hidden="true"></i> Skills</a></li>
+                        <li role="none"><a href="#projects" class="navbar__link" data-link role="menuitem"><i
+                                    class="bi bi-folder-symlink nav-icon" aria-hidden="true"></i> Projects</a></li>
+                        <li role="none"><a href="#experience" class="navbar__link" data-link role="menuitem"><i
+                                    class="bi bi-briefcase nav-icon" aria-hidden="true"></i> Experience</a></li>
+                        <li role="none"><a href="#education" class="navbar__link" data-link role="menuitem"><i
+                                    class="bi bi-journal-bookmark nav-icon" aria-hidden="true"></i> Education</a></li>
+                        <li role="none"><a href="#contact" class="navbar__link" data-link role="menuitem"><i
+                                    class="bi bi-envelope nav-icon" aria-hidden="true"></i> Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="navbar__actions">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark theme"
+                        title="Toggle theme">
+                        <i class="bi bi-moon-stars-fill icon-dark" aria-hidden="true"></i>
+                        <i class="bi bi-sun-fill icon-light" aria-hidden="true"></i>
+                    </button>
+
+                    <a href="assets/files/Atul_Pandey.pdf" class="navbar__resume" download target="_blank"
+                        rel="noopener noreferrer">
+                        <i class="bi bi-file-earmark-arrow-down-fill" aria-hidden="true"></i>
+                        <span>Resume</span>
+                    </a>
+
+                    <button class="navbar__burger" id="navBurger" aria-label="Toggle navigation menu"
+                        aria-expanded="false" aria-controls="navMenu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Hero / Home Section -->
+        <section id="home" class="hero-section">
+            <div class="hero__container">
+
+                <!-- Left Column: Content & Call to Action -->
+                <div class="hero__content">
+                    <div class="hero__badge" data-aos="fade-down" data-aos-duration="600">
+                        <span class="badge-dot" aria-hidden="true"></span>
+                        <span>Crafting Digital Experiences</span>
+                    </div>
+
+                    <h1 class="hero__title" data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">
+                        Hi, I'm <span class="hero__title-name">Atul Pandey</span> <span class="wave-emoji"
+                            aria-hidden="true">👋</span><br>
+                        <span class="hero__typed-wrapper">I build <span id="typed-text"
+                                class="hero__typed-text"></span></span>
+                    </h1>
+
+                    <p class="hero__description" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
+                        A passionate Full-Stack Developer specializing in building high-performance, scalable web
+                        applications and crafting modern, intuitive user experiences.
+                    </p>
+
+                    <div class="hero__actions" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+                        <a href="#projects" class="btn btn-primary" data-link>
+                            <span>View Work</span>
+                            <i class="bi bi-arrow-right-short" aria-hidden="true"></i>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary" data-link>
+                            <i class="bi bi-chat-dots-fill" aria-hidden="true"></i>
+                            <span>Contact Me</span>
+                        </a>
+                    </div>
+
+                    <div class="hero__socials" data-aos="fade-up" data-aos-duration="700" data-aos-delay="400">
+                        <span class="hero__socials-label">Connect with me</span>
+                        <div class="hero__socials-list" aria-label="Social media profiles">
+                            <a href="https://github.com" target="_blank" rel="noopener noreferrer"
+                                class="social-icon-btn" aria-label="View GitHub Profile" title="GitHub">
+                                <i class="bi bi-github" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+                                class="social-icon-btn" aria-label="View LinkedIn Profile" title="LinkedIn">
+                                <i class="bi bi-linkedin" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"
+                                class="social-icon-btn" aria-label="View Twitter / X Profile" title="Twitter/X">
+                                <i class="bi bi-twitter-x" aria-hidden="true"></i>
+                            </a>
+                            <a href="mailto:atul.pandey@example.com" class="social-icon-btn" aria-label="Send Email"
+                                title="Send Email">
+                                <i class="bi bi-envelope-fill" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Hero Visual & Profile Avatar Card -->
+                <div class="hero__visual-col" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">
+                    <div class="hero__visual">
+                        <div class="hero__avatar-backdrop"></div>
+                        <div class="hero__avatar-wrapper">
+                            <img src="assets/images/hero-avatar.jpeg" alt="Atul Pandey - Software Developer Avatar"
+                                class="hero__avatar-img" width="380" height="380">
+                        </div>
+
+                        <!-- Floating Tech Badges -->
+                        <div class="floating-badge floating-badge--1">
+                            <div class="floating-badge__icon" aria-hidden="true">
+                                <i class="bi bi-code-slash"></i>
+                            </div>
+                            <div class="floating-badge__info">
+                                <span class="floating-badge__title">Full-Stack</span>
+                                <span class="floating-badge__subtitle">Development</span>
+                            </div>
+                        </div>
+
+                        <div class="floating-badge floating-badge--2">
+                            <div class="floating-badge__icon" aria-hidden="true">
+                                <i class="bi bi-lightning-charge-fill"></i>
+                            </div>
+                            <div class="floating-badge__info">
+                                <span class="floating-badge__title">Fast & Clean</span>
+                                <span class="floating-badge__subtitle">Web Solutions</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section about-section">
+            <div class="container-custom">
+
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-tag"><i class="bi bi-person-fill" aria-hidden="true"></i> Get To Know Me</span>
+                    <h2 class="section-title">About <span class="text-gradient">Me</span></h2>
+                    <p class="section-subtitle">Passionate about building software products that make a lasting impact
+                    </p>
+                </div>
+
+                <div class="about__grid">
+                    <!-- Left Column: Story & Core Focus Cards -->
+                    <div class="about__content" data-aos="fade-right" data-aos-delay="100">
+                        <h3 class="about__heading">Building digital experiences with passion & precision</h3>
+                        <p class="about__text">
+                            I'm <strong class="text-highlight">Atul Pandey</strong>, a dedicated Full-Stack Web
+                            Developer with a strong focus on creating high-performance, scalable web applications and
+                            intuitive digital experiences.
+                        </p>
+                        <p class="about__text">
+                            I bridge the gap between design and technical execution—writing clean, maintainable code
+                            while delivering smooth user interfaces. Whether building complex web tools or sleek
+                            portfolio applications, I focus on performance, accessibility, and modern aesthetics.
+                        </p>
+
+                        <!-- Core Focus Cards -->
+                        <div class="about__focus-grid">
+                            <div class="focus-card">
+                                <div class="focus-card__icon" aria-hidden="true"><i class="bi bi-speedometer2"></i>
+                                </div>
+                                <div>
+                                    <h4 class="focus-card__title">High Performance</h4>
+                                    <p class="focus-card__desc">Optimized asset loading & crisp execution</p>
+                                </div>
+                            </div>
+                            <div class="focus-card">
+                                <div class="focus-card__icon" aria-hidden="true"><i class="bi bi-palette-fill"></i>
+                                </div>
+                                <div>
+                                    <h4 class="focus-card__title">Modern UI/UX</h4>
+                                    <p class="focus-card__desc">Intuitive, responsive & accessible design</p>
+                                </div>
+                            </div>
+                            <div class="focus-card">
+                                <div class="focus-card__icon" aria-hidden="true"><i class="bi bi-code-square"></i></div>
+                                <div>
+                                    <h4 class="focus-card__title">Clean Code</h4>
+                                    <p class="focus-card__desc">Scalable architecture & modular structure</p>
+                                </div>
+                            </div>
+                            <div class="focus-card">
+                                <div class="focus-card__icon" aria-hidden="true"><i class="bi bi-lightbulb-fill"></i>
+                                </div>
+                                <div>
+                                    <h4 class="focus-card__title">Problem Solver</h4>
+                                    <p class="focus-card__desc">Creative approach to complex challenges</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Animated Stats Counters -->
+                    <div class="about__stats-col" data-aos="fade-left" data-aos-delay="200">
+                        <div class="stats-grid" aria-label="Professional achievements and statistics">
+                            <div class="stat-card">
+                                <div class="stat-card__icon" aria-hidden="true"><i class="bi bi-award-fill"></i></div>
+                                <span class="stat-card__number" data-count="3">0</span><span
+                                    class="stat-card__plus">+</span>
+                                <span class="stat-card__label">Years of Experience</span>
+                            </div>
+
+                            <div class="stat-card">
+                                <div class="stat-card__icon" aria-hidden="true"><i class="bi bi-folder-check"></i></div>
+                                <span class="stat-card__number" data-count="15">0</span><span
+                                    class="stat-card__plus">+</span>
+                                <span class="stat-card__label">Projects Completed</span>
+                            </div>
+
+                            <div class="stat-card">
+                                <div class="stat-card__icon" aria-hidden="true"><i class="bi bi-stack"></i></div>
+                                <span class="stat-card__number" data-count="12">0</span><span
+                                    class="stat-card__plus">+</span>
+                                <span class="stat-card__label">Tech Stack Mastered</span>
+                            </div>
+
+                            <div class="stat-card">
+                                <div class="stat-card__icon" aria-hidden="true"><i class="bi bi-heart-pulse-fill"></i>
+                                </div>
+                                <span class="stat-card__number" data-count="100">0</span><span
+                                    class="stat-card__plus">%</span>
+                                <span class="stat-card__label">Commitment & Quality</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section skills-section">
+            <div class="container-custom">
+
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-tag"><i class="bi bi-cpu-fill" aria-hidden="true"></i> Technical
+                        Expertise</span>
+                    <h2 class="section-title">Skills & <span class="text-gradient">Technologies</span></h2>
+                    <p class="section-subtitle">Modern full-stack technologies, frameworks, and developer tools I use
+                    </p>
+                </div>
+                <div class="skills__grid">
+
+                    <!-- Frontend Development Card -->
+                    <div class="skill-category-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="skill-category__header">
+                            <div class="skill-category__icon skill-category__icon--frontend" aria-hidden="true">
+                                <i class="bi bi-layout-text-window-reverse"></i>
+                            </div>
+                            <div>
+                                <h3 class="skill-category__title">Frontend Development</h3>
+                                <span class="skill-category__badge">User Interfaces</span>
+                            </div>
+                        </div>
+                        <ul class="skill-tags-list" aria-label="Frontend development skills">
+                            <li class="skill-tag"><i class="bi bi-filetype-html" aria-hidden="true"></i> HTML5</li>
+                            <li class="skill-tag"><i class="bi bi-filetype-css" aria-hidden="true"></i> CSS3 / SCSS</li>
+                            <li class="skill-tag"><i class="bi bi-filetype-js" aria-hidden="true"></i> JavaScript (ES6+)
+                            <li class="skill-tag"><i class="bi bi-bootstrap-fill" aria-hidden="true"></i> Bootstrap 5
+                            </li>
+                            <li class="skill-tag"><i class="bi bi-wind" aria-hidden="true"></i> Tailwind CSS</li>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Backend Development Card -->
+                    <div class="skill-category-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="skill-category__header">
+                            <div class="skill-category__icon skill-category__icon--backend" aria-hidden="true">
+                                <i class="bi bi-server"></i>
+                            </div>
+                            <div>
+                                <h3 class="skill-category__title">Backend Development</h3>
+                                <span class="skill-category__badge">Server & Logic</span>
+                            </div>
+                        </div>
+                        <ul class="skill-tags-list" aria-label="Backend development skills">
+                            <li class="skill-tag"><i class="bi bi-cup-hot" aria-hidden="true"></i> Core Java / Java 8
+                            </li>
+                            <li class="skill-tag"><i class="bi bi-file-earmark-code-fill" aria-hidden="true"></i> JSP
+                            </li>
+                            <li class="skill-tag"><i class="bi bi-gear-fill" aria-hidden="true"></i> Servlet</li>
+                            <li class="skill-tag"><i class="bi bi-flower1" aria-hidden="true"></i> Spring MVC</li>
+                            <li class="skill-tag"><i class="bi bi-layers-fill" aria-hidden="true"></i> Hibernate</li>
+                            <li class="skill-tag"><i class="bi bi-code-square" aria-hidden="true"></i> C</li>
+                            <li class="skill-tag"><i class="bi bi-cpu-fill" aria-hidden="true"></i> C++</li>
+                        </ul>
+                    </div>
+
+                    <!-- Databases & Storage Card -->
+                    <div class="skill-category-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="skill-category__header">
+                            <div class="skill-category__icon skill-category__icon--database" aria-hidden="true">
+                                <i class="bi bi-database-fill-gear"></i>
+                            </div>
+                            <div>
+                                <h3 class="skill-category__title">Databases & Cloud</h3>
+                                <span class="skill-category__badge">Data & State</span>
+                            </div>
+                        </div>
+                        <ul class="skill-tags-list" aria-label="Databases and cloud skills">
+                            <li class="skill-tag"><i class="bi bi-database-fill" aria-hidden="true"></i> MySQL</li>
+                            <li class="skill-tag"><i class="bi bi-hdd-network-fill" aria-hidden="true"></i> Oracle
+                                Database</li>
+                            <li class="skill-tag"><i class="bi bi-table" aria-hidden="true"></i> PL/SQL</li>
+                            <li class="skill-tag"><i class="bi bi-database" aria-hidden="true"></i> SQL</li>
+                        </ul>
+                    </div>
+
+                    <!-- Tools & Workflow Card -->
+                    <div class="skill-category-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="skill-category__header">
+                            <div class="skill-category__icon skill-category__icon--tools" aria-hidden="true">
+                                <i class="bi bi-tools"></i>
+                            </div>
+                            <div>
+                                <h3 class="skill-category__title">Tools & Workflow</h3>
+                                <span class="skill-category__badge">Dev Ecosystem</span>
+                            </div>
+                        </div>
+                        <ul class="skill-tags-list" aria-label="Developer tools and workflows">
+                            <li class="skill-tag"><i class="bi bi-box-seam-fill" aria-hidden="true"></i> Maven</li>
+                            <li class="skill-tag"><i class="bi bi-git" aria-hidden="true"></i> Git</li>
+                            <li class="skill-tag"><i class="bi bi-github" aria-hidden="true"></i> GitHub</li>
+                            <li class="skill-tag"><i class="bi bi-display" aria-hidden="true"></i> Eclipse IDE</li>
+                            <li class="skill-tag"><i class="bi bi-terminal-fill" aria-hidden="true"></i> VS Code</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section projects-section">
+            <div class="container-custom">
+
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-tag"><i class="bi bi-folder-symlink-fill" aria-hidden="true"></i> My Featured
+                        Work</span>
+                    <h2 class="section-title">Featured <span class="text-gradient">Projects</span></h2>
+                    <p class="section-subtitle">A selection of web applications, SaaS platforms, and digital products
+                        I've crafted</p>
+                </div>
+
+                <!-- Projects Filter Bar -->
+                <div class="projects__filter-bar" role="tablist" aria-label="Project categories" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <button type="button" class="filter-btn is-active" data-filter="all" role="tab"
+                        aria-selected="true">All Projects</button>
+                    <button type="button" class="filter-btn" data-filter="frontend" role="tab"
+                        aria-selected="false">Frontend</button>
+                    <button type="button" class="filter-btn" data-filter="backend" role="tab"
+                        aria-selected="false">Backend</button>
+                    <button type="button" class="filter-btn" data-filter="extension" role="tab"
+                        aria-selected="false">Extension</button>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="projects__grid">
+
+                    <!-- Project Card 1: Online Quiz Management System -->
+                    <div class="project-card" data-category="backend" data-aos="fade-up" data-aos-delay="150">
+                        <div class="project-card__image-wrapper">
+                            <img src="assets/images/project-1.png" alt="Online Quiz Management System preview"
+                                class="project-card__img" loading="lazy">
+                            <div class="project-card__overlay">
+                                <a href="https://github.com/atul-pandey-dev" target="_blank" rel="noopener noreferrer"
+                                    class="project-overlay-btn" aria-label="View source code on GitHub"
+                                    title="View Source Code"><i class="bi bi-github" aria-hidden="true"></i></a>
+                                <a href="#contact" class="project-overlay-btn" aria-label="View project details"
+                                    title="Project Details"><i class="bi bi-box-arrow-up-right"
+                                        aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-card__body">
+                            <div class="project-card__meta">
+                                <span class="project-card__category">Backend & Java</span>
+                                <span class="project-card__featured-badge"><i class="bi bi-star-fill"
+                                        aria-hidden="true"></i> Featured</span>
+                            </div>
+                            <h3 class="project-card__title">Online Quiz Management System</h3>
+                            <p class="project-card__description">
+                                Developed a role-based online quiz platform for Admins, Teachers, and Students.
+                                Implemented quiz creation, management, and real-time result evaluation.
+                            </p>
+                            <div class="project-card__tags" aria-label="Technologies used">
+                                <span class="tag">HTML5</span>
+                                <span class="tag">CSS3</span>
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">JSP</span>
+                                <span class="tag">Servlet</span>
+                                <span class="tag">Oracle DB</span>
+                            </div>
+                            <div class="project-card__actions">
+                                <a href="#contact" class="project-link project-link--primary">
+                                    <span>Live Preview</span> <i class="bi bi-arrow-up-right-short"
+                                        aria-hidden="true"></i>
+                                </a>
+                                <a href="https://github.com/atul-pandey-dev" target="_blank" rel="noopener noreferrer"
+                                    class="project-link project-link--secondary">
+                                    <i class="bi bi-github" aria-hidden="true"></i> <span>GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2: Playgroup School Management System -->
+                    <div class="project-card" data-category="backend" data-aos="fade-up" data-aos-delay="250">
+                        <div class="project-card__image-wrapper">
+                            <img src="assets/images/project-2.png" alt="Playgroup School Management System preview"
+                                class="project-card__img" loading="lazy">
+                            <div class="project-card__overlay">
+                                <a href="https://github.com/atul-pandey-dev" target="_blank" rel="noopener noreferrer"
+                                    class="project-overlay-btn" aria-label="View source code on GitHub"
+                                    title="View Source Code"><i class="bi bi-github" aria-hidden="true"></i></a>
+                                <a href="#contact" class="project-overlay-btn" aria-label="View project details"
+                                    title="Project Details"><i class="bi bi-box-arrow-up-right"
+                                        aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-card__body">
+                            <div class="project-card__meta">
+                                <span class="project-card__category">Backend & PHP</span>
+                                <span class="project-card__featured-badge"><i class="bi bi-star-fill"
+                                        aria-hidden="true"></i> Featured</span>
+                            </div>
+                            <h3 class="project-card__title">Playgroup School Management System</h3>
+                            <p class="project-card__description">
+                                Developed a complete school management system with online admissions and fee management.
+                                Implemented role-based dashboards and administration features.
+                            </p>
+                            <div class="project-card__tags" aria-label="Technologies used">
+                                <span class="tag">PHP</span>
+                                <span class="tag">MySQL</span>
+                                <span class="tag">Bootstrap 5</span>
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">HTML5</span>
+                            </div>
+                            <div class="project-card__actions">
+                                <a href="#contact" class="project-link project-link--primary">
+                                    <span>Live Preview</span> <i class="bi bi-arrow-up-right-short"
+                                        aria-hidden="true"></i>
+                                </a>
+                                <a href="https://github.com/atul-pandey-dev" target="_blank" rel="noopener noreferrer"
+                                    class="project-link project-link--secondary">
+                                    <i class="bi bi-github" aria-hidden="true"></i> <span>GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3: Personal Developer Portfolio -->
+                    <div class="project-card" data-category="frontend" data-aos="fade-up" data-aos-delay="350">
+                        <div class="project-card__image-wrapper">
+                            <img src="assets/images/project-3.png" alt="Personal Developer Portfolio preview"
+                                class="project-card__img" loading="lazy">
+                            <div class="project-card__overlay">
+                                <a href="https://github.com/atul-pandey-dev" target="_blank" rel="noopener noreferrer"
+                                    class="project-overlay-btn" aria-label="View source code on GitHub"
+                                    title="View Source Code"><i class="bi bi-github" aria-hidden="true"></i></a>
+                                <a href="#" class="project-overlay-btn" aria-label="View live project"
+                                    title="Live Preview"><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-card__body">
+                            <div class="project-card__meta">
+                                <span class="project-card__category">Frontend & Portfolio</span>
+                                <span class="project-card__featured-badge"><i class="bi bi-star-fill"
+                                        aria-hidden="true"></i> Featured</span>
+                            </div>
+                            <h3 class="project-card__title">Personal Developer Portfolio</h3>
+                            <p class="project-card__description">
+                                Modern, interactive, fully responsive developer portfolio featuring dynamic scrollspy
+                                navigation, liquid spring pill indicator, dark/light theme switching, and real-time form
+                                validation.
+                            </p>
+                            <div class="project-card__tags" aria-label="Technologies used">
+                                <span class="tag">HTML5</span>
+                                <span class="tag">CSS3</span>
+                                <span class="tag">JavaScript (ES6+)</span>
+                                <span class="tag">Bootstrap 5</span>
+                                <span class="tag">AOS</span>
+                            </div>
+                            <div class="project-card__actions">
+                                <a href="#" class="project-link project-link--primary">
+                                    <span>Live Preview</span> <i class="bi bi-arrow-up-right-short"
+                                        aria-hidden="true"></i>
+                                </a>
+                                <a href="https://github.com/atul-pandey-dev" target="_blank" rel="noopener noreferrer"
+                                    class="project-link project-link--secondary">
+                                    <i class="bi bi-github" aria-hidden="true"></i> <span>GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 4: Smart Tab & Session Saver Extension -->
+                    <div class="project-card" data-category="extension" data-aos="fade-up" data-aos-delay="450">
+                        <div class="project-card__image-wrapper">
+                            <img src="assets/images/project-4.png" alt="Smart Tab & Session Saver Extension preview"
+                                class="project-card__img" loading="lazy">
+                            <div class="project-card__overlay">
+                                <a href="https://github.com/atul-pandey-dev" target="_blank" rel="noopener noreferrer"
+                                    class="project-overlay-btn" aria-label="View source code on GitHub"
+                                    title="View Source Code"><i class="bi bi-github" aria-hidden="true"></i></a>
+                                <a href="#contact" class="project-overlay-btn" aria-label="View extension details"
+                                    title="Extension Details"><i class="bi bi-box-arrow-up-right"
+                                        aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-card__body">
+                            <div class="project-card__meta">
+                                <span class="project-card__category">Chrome Extension</span>
+                                <span class="project-card__featured-badge"><i class="bi bi-star-fill"
+                                        aria-hidden="true"></i> Featured</span>
+                            </div>
+                            <h3 class="project-card__title">Smart Tab & Session Saver Extension</h3>
+                            <p class="project-card__description">
+                                Browser extension for session management, fast tab grouping, custom quick-notes, and
+                                one-click bookmark sync built using Manifest V3 and JavaScript.
+                            </p>
+                            <div class="project-card__tags" aria-label="Technologies used">
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">Manifest V3</span>
+                                <span class="tag">HTML5</span>
+                                <span class="tag">CSS3</span>
+                                <span class="tag">Chrome API</span>
+                            </div>
+                            <div class="project-card__actions">
+                                <a href="#contact" class="project-link project-link--primary">
+                                    <span>Live Preview</span> <i class="bi bi-arrow-up-right-short"
+                                        aria-hidden="true"></i>
+                                </a>
+                                <a href="https://github.com/atul-pandey-dev" target="_blank" rel="noopener noreferrer"
+                                    class="project-link project-link--secondary">
+                                    <i class="bi bi-github" aria-hidden="true"></i> <span>GitHub</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section experience-section">
+            <div class="container-custom">
+
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-tag"><i class="bi bi-briefcase-fill" aria-hidden="true"></i> Career
+                        Journey</span>
+                    <h2 class="section-title">Work <span class="text-gradient">Experience</span></h2>
+                    <p class="section-subtitle">My professional track record building scalable web products and
+                        engineering solutions</p>
+                </div>
+
+                <div class="timeline">
+
+                    <!-- Timeline Item 1 -->
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="timeline-dot" aria-hidden="true">
+                            <i class="bi bi-briefcase"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3 class="timeline-title">Senior Full-Stack Developer</h3>
+                                    <div class="timeline-company-info">
+                                        <span class="timeline-company"><i class="bi bi-building" aria-hidden="true"></i>
+                                            TechVision Solutions</span>
+                                        <span class="timeline-location"><i class="bi bi-geo-alt-fill"
+                                                aria-hidden="true"></i> Full-Time · Remote</span>
+                                    </div>
+                                </div>
+                                <span class="timeline-period"><i class="bi bi-calendar-event" aria-hidden="true"></i>
+                                    2024 - Present</span>
+                            </div>
+                            <p class="timeline-text">
+                                Leading the core engineering team in redesigning scalable SaaS web platforms. Improved
+                                frontend load times by 45% using code-splitting, optimized database queries, and
+                                implemented automated CI/CD deployment pipelines.
+                            </p>
+                            <div class="timeline-tags" aria-label="Technologies used">
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>TypeScript</span>
+                                <span>MongoDB</span>
+                                <span>AWS</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 2 -->
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="timeline-dot" aria-hidden="true">
+                            <i class="bi bi-code-slash"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3 class="timeline-title">Full-Stack Web Developer</h3>
+                                    <div class="timeline-company-info">
+                                        <span class="timeline-company"><i class="bi bi-building" aria-hidden="true"></i>
+                                            Innovate Labs</span>
+                                        <span class="timeline-location"><i class="bi bi-geo-alt-fill"
+                                                aria-hidden="true"></i> Full-Time · India</span>
+                                    </div>
+                                </div>
+                                <span class="timeline-period"><i class="bi bi-calendar-event" aria-hidden="true"></i>
+                                    2022 - 2024</span>
+                            </div>
+                            <p class="timeline-text">
+                                Developed responsive client web apps, built RESTful APIs, and integrated third-party
+                                payment gateways. Collaborated closely with UI/UX designers to translate Figma
+                                prototypes into pixel-perfect code.
+                            </p>
+                            <div class="timeline-tags" aria-label="Technologies used">
+                                <span>JavaScript (ES6+)</span>
+                                <span>Express.js</span>
+                                <span>REST APIs</span>
+                                <span>Bootstrap 5</span>
+                                <span>Git</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 3 -->
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="timeline-dot" aria-hidden="true">
+                            <i class="bi bi-laptop"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3 class="timeline-title">Frontend Developer Intern</h3>
+                                    <div class="timeline-company-info">
+                                        <span class="timeline-company"><i class="bi bi-building" aria-hidden="true"></i>
+                                            SoftCore Tech</span>
+                                        <span class="timeline-location"><i class="bi bi-geo-alt-fill"
+                                                aria-hidden="true"></i> Internship · India</span>
+                                    </div>
+                                </div>
+                                <span class="timeline-period"><i class="bi bi-calendar-event" aria-hidden="true"></i>
+                                    2021 - 2022</span>
+                            </div>
+                            <p class="timeline-text">
+                                Created accessible, mobile-first web pages, refactored legacy CSS into modular systems,
+                                and implemented interactive UI components using HTML5, CSS3, and vanilla JS.
+                            </p>
+                            <div class="timeline-tags" aria-label="Technologies used">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                                <span>Figma</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="section education-section">
+            <div class="container-custom">
+
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-tag"><i class="bi bi-journal-bookmark-fill" aria-hidden="true"></i> Academic
+                        Background</span>
+                    <h2 class="section-title">Education & <span class="text-gradient">Degrees</span></h2>
+                    <p class="section-subtitle">Academic foundations that shaped my engineering mindset and technical
+                        skills</p>
+                </div>
+
+                <div class="education__grid">
+
+                    <!-- Education Card 1 -->
+                    <div class="education-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="education-card__icon" aria-hidden="true">
+                            <i class="bi bi-mortarboard-fill"></i>
+                        </div>
+                        <div class="education-card__content">
+                            <div class="education-card__meta">
+                                <span class="education-card__year"><i class="bi bi-calendar3" aria-hidden="true"></i>
+                                    2019 - 2023</span>
+                                <span class="education-card__location"><i class="bi bi-geo-alt-fill"
+                                        aria-hidden="true"></i> India</span>
+                            </div>
+                            <h3 class="education-card__degree">Bachelor of Technology (B.Tech)</h3>
+                            <h4 class="education-card__field">Computer Science & Engineering</h4>
+                            <p class="education-card__institution">State University of Technology</p>
+
+                            <div class="education-card__grade-badge">
+                                <i class="bi bi-award-fill" aria-hidden="true"></i>
+                                <span><strong>Grade:</strong> First Class Distinction (8.8 / 10 CGPA)</span>
+                            </div>
+
+                            <div class="education-card__highlights" aria-label="Key subjects">
+                                <span>Data Structures</span>
+                                <span>Algorithms</span>
+                                <span>Web Engineering</span>
+                                <span>DBMS</span>
+                                <span>Software Engineering</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Education Card 2 -->
+                    <div class="education-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="education-card__icon" aria-hidden="true">
+                            <i class="bi bi-book-half"></i>
+                        </div>
+                        <div class="education-card__content">
+                            <div class="education-card__meta">
+                                <span class="education-card__year"><i class="bi bi-calendar3" aria-hidden="true"></i>
+                                    2018 - 2019</span>
+                                <span class="education-card__location"><i class="bi bi-geo-alt-fill"
+                                        aria-hidden="true"></i> India</span>
+                            </div>
+                            <h3 class="education-card__degree">Higher Secondary Education (12th)</h3>
+                            <h4 class="education-card__field">Science Stream (PCM)</h4>
+                            <p class="education-card__institution">Central Board of Secondary Education (CBSE)</p>
+
+                            <div class="education-card__grade-badge">
+                                <i class="bi bi-check-circle-fill" aria-hidden="true"></i>
+                                <span><strong>Focus:</strong> Physics, Chemistry & Higher Mathematics</span>
+                            </div>
+
+                            <div class="education-card__highlights" aria-label="Key subjects">
+                                <span>Mathematics</span>
+                                <span>Computer Science</span>
+                                <span>Physics</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
+            <div class="container-custom">
+
+                <div class="section-header" data-aos="fade-up">
+                    <span class="section-tag"><i class="bi bi-envelope-open-fill" aria-hidden="true"></i> Get In
+                        Touch</span>
+                    <h2 class="section-title">Let's Work <span class="text-gradient">Together</span></h2>
+                    <p class="section-subtitle">Have a project proposal, job opportunity, or question? Send me a
+                        message!</p>
+                </div>
+
+                <div class="contact__grid">
+
+                    <!-- Left Column: Direct Info Cards -->
+                    <div class="contact__info-col" data-aos="fade-right" data-aos-delay="100">
+                        <h3 class="contact__info-heading">Let's talk about your next project</h3>
+                        <p class="contact__info-text">
+                            I am currently available for freelance inquiries, contract work, and full-time roles. Feel
+                            free to contact me directly via email or social channels!
+                        </p>
+
+                        <div class="contact-cards-list">
+
+                            <a href="mailto:atul.pandey@example.com" class="contact-info-card"
+                                aria-label="Email Atul Pandey">
+                                <div class="contact-info-card__icon contact-info-card__icon--email">
+                                    <i class="bi bi-envelope-fill" aria-hidden="true"></i>
+                                </div>
+                                <div>
+                                    <span class="contact-info-card__label">Email Me</span>
+                                    <span class="contact-info-card__value">atul.pandey@example.com</span>
+                                </div>
+                            </a>
+
+                            <a href="tel:+919876543210" class="contact-info-card"
+                                aria-label="Call or WhatsApp Atul Pandey">
+                                <div class="contact-info-card__icon contact-info-card__icon--phone">
+                                    <i class="bi bi-telephone-fill" aria-hidden="true"></i>
+                                </div>
+                                <div>
+                                    <span class="contact-info-card__label">Phone / WhatsApp</span>
+                                    <span class="contact-info-card__value">+91 98765 43210</span>
+                                </div>
+                            </a>
+
+                            <div class="contact-info-card">
+                                <div class="contact-info-card__icon contact-info-card__icon--location">
+                                    <i class="bi bi-geo-alt-fill" aria-hidden="true"></i>
+                                </div>
+                                <div>
+                                    <span class="contact-info-card__label">Location</span>
+                                    <span class="contact-info-card__value">New Delhi, India (Remote Available)</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Interactive Form -->
+                    <div class="contact__form-col" data-aos="fade-left" data-aos-delay="200">
+                        <form class="contact-form" id="contactForm" novalidate>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contactName" class="form-label">Your Name</label>
+                                    <div class="input-wrapper">
+                                        <i class="bi bi-person input-icon" aria-hidden="true"></i>
+                                        <input type="text" id="contactName" class="form-input"
+                                            placeholder="Enter your full name" autocomplete="name" required
+                                            aria-required="true">
+                                    </div>
+                                    <span class="field-error" id="nameError" aria-live="polite"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contactEmail" class="form-label">Your Email</label>
+                                    <div class="input-wrapper">
+                                        <i class="bi bi-envelope input-icon" aria-hidden="true"></i>
+                                        <input type="email" id="contactEmail" class="form-input"
+                                            placeholder="Enter your email" autocomplete="email" required
+                                            aria-required="true">
+                                    </div>
+                                    <span class="field-error" id="emailError" aria-live="polite"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contactSubject" class="form-label">Subject</label>
+                                <div class="input-wrapper">
+                                    <i class="bi bi-chat-left-text input-icon" aria-hidden="true"></i>
+                                    <input type="text" id="contactSubject" class="form-input"
+                                        placeholder="e.g. Project Inquiry / Web Development / Hiring" autocomplete="off"
+                                        required aria-required="true">
+                                </div>
+                                <span class="field-error" id="subjectError" aria-live="polite"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contactMessage" class="form-label">Message</label>
+                                <div class="input-wrapper input-wrapper--textarea">
+                                    <i class="bi bi-pencil-square input-icon" aria-hidden="true"></i>
+                                    <textarea id="contactMessage" class="form-input form-input--textarea" rows="5"
+                                        placeholder="Write your message here... Tell me about your project goals, timeline, or inquiry."
+                                        required aria-required="true"></textarea>
+                                </div>
+                                <span class="field-error" id="messageError" aria-live="polite"></span>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-submit" id="formSubmitBtn">
+                                <span>Send Message</span>
+                                <i class="bi bi-send-fill" aria-hidden="true"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <div class="container-custom">
+
+            <!-- 4-Column Clean Structured Grid Layout -->
+            <div class="footer__grid">
+
+                <!-- Column 1: Brand & Status -->
+                <div class="footer__col footer__col--brand">
+                    <a href="#home" class="footer__logo" data-link>
+                        Atul Pandey<span class="navbar__logo-dot">.</span>
+                    </a>
+                    <p class="footer__tagline">
+                        Full-Stack Developer crafting high-performance web apps, modern UI systems, and scalable digital
+                        experiences.
+                    </p>
+                    <div class="footer__status-badge"
+                        title="Currently open for freelance projects & full-time engineering roles">
+                        <span class="status-pulse" aria-hidden="true"></span>
+                        <span class="status-badge__text">Available for opportunities — Freelance & Full-time</span>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Navigation -->
+                <div class="footer__col footer__col--nav">
+                    <h4 class="footer__col-title">Navigation</h4>
+                    <ul class="footer__link-list">
+                        <li><a href="#home" data-link><i class="bi bi-arrow-right-short" aria-hidden="true"></i>
+                                Home</a></li>
+                        <li><a href="#about" data-link><i class="bi bi-arrow-right-short" aria-hidden="true"></i> About
+                                Me</a></li>
+                        <li><a href="#skills" data-link><i class="bi bi-arrow-right-short" aria-hidden="true"></i>
+                                Skills</a></li>
+                        <li><a href="#projects" data-link><i class="bi bi-arrow-right-short" aria-hidden="true"></i>
+                                Projects</a></li>
+                        <li><a href="#experience" data-link><i class="bi bi-arrow-right-short" aria-hidden="true"></i>
+                                Experience</a></li>
+                        <li><a href="#education" data-link><i class="bi bi-arrow-right-short" aria-hidden="true"></i>
+                                Education</a></li>
+                        <li><a href="#contact" data-link><i class="bi bi-arrow-right-short" aria-hidden="true"></i>
+                                Contact Me</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Core Tech Focus -->
+                <div class="footer__col footer__col--expertise">
+                    <h4 class="footer__col-title">Core Expertise</h4>
+                    <div class="footer__expertise-pills">
+                        <span class="expertise-pill"><i class="bi bi-layers-fill" aria-hidden="true"></i> Full-Stack
+                            Engineering</span>
+                        <span class="expertise-pill"><i class="bi bi-palette-fill" aria-hidden="true"></i> Modern UI/UX
+                            Systems</span>
+                        <span class="expertise-pill"><i class="bi bi-diagram-3-fill" aria-hidden="true"></i> RESTful API
+                            Architecture</span>
+                        <span class="expertise-pill"><i class="bi bi-lightning-charge-fill" aria-hidden="true"></i>
+                            Performance & SEO</span>
+                        <span class="expertise-pill"><i class="bi bi-database-fill-gear" aria-hidden="true"></i>
+                            Database Management</span>
+                    </div>
+                </div>
+
+                <!-- Column 4: Connect & Social Grid -->
+                <div class="footer__col footer__col--connect">
+                    <h4 class="footer__col-title">Connect</h4>
+                    <a href="#contact" class="footer__cta-badge" data-link>
+                        <i class="bi bi-chat-dots-fill" aria-hidden="true"></i>
+                        <span>Start a Conversation</span>
+                        <i class="bi bi-arrow-right-short arrow-icon" aria-hidden="true"></i>
+                    </a>
+
+                    <div class="footer__social-grid">
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-pill-btn"
+                            aria-label="GitHub">
+                            <i class="bi bi-github" aria-hidden="true"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-pill-btn"
+                            aria-label="LinkedIn">
+                            <i class="bi bi-linkedin" aria-hidden="true"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-pill-btn"
+                            aria-label="Twitter/X">
+                            <i class="bi bi-twitter-x" aria-hidden="true"></i>
+                            <span>Twitter/X</span>
+                        </a>
+                        <a href="mailto:atul.pandey@example.com" class="social-pill-btn" aria-label="Email">
+                            <i class="bi bi-envelope-fill" aria-hidden="true"></i>
+                            <span>Email</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Refined Bottom Bar -->
+            <div class="footer__bottom">
+                <div class="footer__bottom-left">
+                    <p>© 2026 Atul Pandey. All rights reserved.</p>
+                </div>
+                <div class="footer__bottom-right">
+                    <span class="footer__location-tag"><i class="bi bi-geo-alt-fill text-danger" aria-hidden="true"></i>
+                        Mumbai, India</span>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Back-to-Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Scroll back to top" title="Back to top">
+        <i class="bi bi-arrow-up-short" aria-hidden="true"></i>
+    </button>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <!-- Typed.js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

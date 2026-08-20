@@ -327,7 +327,9 @@ const initStatsCounter = () => {
 
     const animateCounts = () => {
         statNumbers.forEach((el) => {
-            const target = parseInt(el.getAttribute('data-count'), 10) || 0;
+            const rawTarget = el.getAttribute('data-count');
+            const isFloat = rawTarget && rawTarget.includes('.');
+            const target = isFloat ? parseFloat(rawTarget) : (parseInt(rawTarget, 10) || 0);
             const duration = 1800; // ms
             const startTime = performance.now();
 
@@ -335,14 +337,17 @@ const initStatsCounter = () => {
                 const elapsed = currentTime - startTime;
                 const progress = Math.min(elapsed / duration, 1);
                 // Ease out quad formula
-                const currentVal = Math.floor(progress * (2 - progress) * target);
+                const factor = progress * (2 - progress);
+                const currentVal = isFloat
+                    ? (factor * target).toFixed(1)
+                    : Math.floor(factor * target);
 
                 el.textContent = currentVal;
 
                 if (progress < 1) {
                     requestAnimationFrame(updateCount);
                 } else {
-                    el.textContent = target;
+                    el.textContent = rawTarget;
                 }
             };
 

@@ -2427,6 +2427,34 @@ body.nav-open {
     color: #ffffff;
 }
 
+/* Floating WhatsApp Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 90px;
+    right: 30px;
+    z-index: 1050;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #25D366;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+    transition: all 0.35s var(--ease-spring);
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-4px) scale(1.08);
+    background: #20ba5a;
+    color: #ffffff;
+    box-shadow: 0 12px 28px rgba(37, 211, 102, 0.55);
+}
+
 /* ==========================================================================
    Responsive Breakpoints & Auto-Adjust Layout System
    ========================================================================== */
@@ -2709,6 +2737,14 @@ body.nav-open {
         width: 44px;
         height: 44px;
         font-size: 1.3rem;
+    }
+
+    .whatsapp-float {
+        bottom: 74px;
+        right: 20px;
+        width: 44px;
+        height: 44px;
+        font-size: 1.4rem;
     }
 }
 

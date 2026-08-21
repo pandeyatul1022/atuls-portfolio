@@ -1,0 +1,32 @@
+PROPRIETARY AND COPYRIGHTED SOURCE CODE LICENSE
+
+Copyright (c) 2026 Atul Pandey. All Rights Reserved.
+
+NOTICE AND TERMS OF USE:
+
+1. PROPRIETARY CODE & INTELLECTUAL PROPERTY:
+   This repository and all associated files (including HTML, CSS, JavaScript, assets,
+   designs, visual layouts, components, images, and content) are the exclusive intellectual 
+   property of Atul Pandey.
+
+2. EDUCATIONAL & PERSONAL STUDY EXCEPTION (LOCAL USE PERMITTED):
+   Permission IS GRANTED to individuals to download, view, and study this source code 
+   on a local machine strictly for personal education, learning, and offline reference on 
+   `localhost` or local file preview.
+
+3. STRICT PUBLIC HOSTING PROHIBITION:
+   Permission is strictly DENIED to any person or entity to:
+   - Host, deploy, or re-publish this website, source code, UI design, or derivative works 
+     on any public domain, web server, GitHub Pages, Vercel, Netlify, Cloudflare, or cloud host.
+   - Translate, convert, re-skin, or modify the codebase for public deployment.
+   - Sell, sublicense, or distribute copies of this software for commercial or public use.
+
+4. AUTOMATED REAL-TIME ALERT & DOMAIN LOCK:
+   This software includes embedded security validation and real-time webhook notification 
+   engines. Any attempt to host or deploy this codebase on an unauthorized public domain 
+   will automatically dispatch an alert (offending domain, IP, URL, timestamp) to the 
+   owner's Email, SMS, and WhatsApp notification channels, while immediately locking the site.
+
+5. AUTHORIZED CONTACT:
+   For licensing inquiries or permissions, contact Atul Pandey via GitHub:
+   https://github.com/pandeyatul1022

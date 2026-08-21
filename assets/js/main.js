@@ -1,6 +1,29 @@
 'use strict';
 
 /**
+ * Secondary Core Security Shield - Prevents bypassing security.js or modifying UI/code
+ */
+(function verifyCoreIntegrity() {
+    const _sec = ['bG9jYWxob3N0','MTI3LjAuMC4x','Ojox','cGFuZGV5YXR1bDEwMjIuZ2l0aHViLmlv','YXR1bC1wYW5kZXkuY29t','YXR1bHMtcG9ydGZvbGlvLnZlcmNlbC5hcHA=','YXR1bHMtcG9ydGZvbGlvLm5ldGxpZnkuYXBw'];
+    const current = (window.location.hostname || '').toLowerCase();
+    
+    if (window.location.protocol !== 'file:' && current) {
+        const isOk = _sec.some(d => {
+            try { const dec = atob(d); return current === dec || current.endsWith('.' + dec); } catch(e) { return false; }
+        });
+
+        if (!isOk) {
+            if (typeof window.__triggerCopyrightStrike === 'function') {
+                window.__triggerCopyrightStrike(`Core JS Guard: Domain '${current}' is not authorized to execute this portfolio logic.`);
+            } else {
+                document.documentElement.innerHTML = '<div style="background:#090a0f;color:#ef4444;height:100vh;display:flex;align-items:center;justify-content:center;font-family:sans-serif;text-align:center;padding:20px;"><div><h1 style="font-size:32px;">🛑 DMCA COPYRIGHT VIOLATION</h1><p style="color:#9ca3af;margin-top:10px;">Unauthorized source code modification or domain deployment detected.</p><p style="color:#ef4444;margin-top:15px;">Original Owner: Atul Pandey</p></div></div>';
+            }
+            throw new Error('DMCA Copyright Enforcement: Execution terminated on unauthorized domain.');
+        }
+    }
+})();
+
+/**
  * ThemeController
  * Manages light & dark mode preference with localStorage & system preference sync.
  */

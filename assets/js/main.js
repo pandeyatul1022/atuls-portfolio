@@ -554,13 +554,31 @@ const initContactForm = () => {
         const phoneNumber = '918928303867';
         const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappText)}`;
 
-        // Open WhatsApp in a new tab immediately (prevents browser popup blocker)
+        // 1. Send form data directly to your Email (atuls.pandey22@gmail.com) in background
+        try {
+            fetch('https://formsubmit.co/ajax/atuls.pandey22@gmail.com', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    name: nameVal,
+                    email: emailVal,
+                    subject: subjectVal,
+                    _subject: `New Portfolio Inquiry from ${nameVal}: ${subjectVal}`,
+                    message: messageVal
+                })
+            }).catch(() => {});
+        } catch (e) {}
+
+        // 2. Open WhatsApp in a new tab immediately (prevents browser popup blocker)
         window.open(whatsappUrl, '_blank');
 
         // Show dot pulse animation on submit button
         if (submitBtn) {
             submitBtn.disabled = true;
-            submitBtn.innerHTML = `<span>Sending to WhatsApp</span> <span class="dot-loader" aria-hidden="true"><span></span><span></span><span></span></span>`;
+            submitBtn.innerHTML = `<span>Sending...</span> <span class="dot-loader" aria-hidden="true"><span></span><span></span><span></span></span>`;
         }
 
         const delay = 1000;

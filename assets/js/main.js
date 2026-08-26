@@ -538,14 +538,32 @@ const initContactForm = () => {
             return;
         }
 
+        // Get filled data from inputs
+        const nameVal = fields.name.input ? fields.name.input.value.trim() : '';
+        const emailVal = fields.email.input ? fields.email.input.value.trim() : '';
+        const subjectVal = fields.subject.input ? fields.subject.input.value.trim() : '';
+        const messageVal = fields.message.input ? fields.message.input.value.trim() : '';
+
+        // Build pre-formatted WhatsApp message
+        const whatsappText = `👋 *New Portfolio Contact Inquiry*\n\n` +
+            `👤 *Name:* ${nameVal}\n` +
+            `📧 *Email:* ${emailVal}\n` +
+            `📌 *Subject:* ${subjectVal}\n\n` +
+            `💬 *Message:*\n${messageVal}`;
+
+        const phoneNumber = '918928303867';
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappText)}`;
+
+        // Open WhatsApp in a new tab immediately (prevents browser popup blocker)
+        window.open(whatsappUrl, '_blank');
+
         // Show dot pulse animation on submit button
         if (submitBtn) {
             submitBtn.disabled = true;
-            submitBtn.innerHTML = `<span>Sending</span> <span class="dot-loader" aria-hidden="true"><span></span><span></span><span></span></span>`;
+            submitBtn.innerHTML = `<span>Sending to WhatsApp</span> <span class="dot-loader" aria-hidden="true"><span></span><span></span><span></span></span>`;
         }
 
-        // Generate a random loading duration between 1.2s and 2.8s
-        const randomDelay = Math.floor(Math.random() * 1600) + 1200;
+        const delay = 1000;
 
         setTimeout(() => {
             form.reset();
@@ -570,13 +588,14 @@ const initContactForm = () => {
             if (typeof Swal !== 'undefined') {
                 const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
                 Swal.fire({
-                    title: '<span class="text-gradient">Message Sent Successfully!</span>',
+                    title: '<span class="text-gradient">Message Sent to WhatsApp!</span>',
                     html: `
                         <div class="custom-swal-html">
-                            Thank you for reaching out! Your message has been received and <strong>Atul Pandey</strong> will respond to your email shortly.
-                            <br>
+                            Thank you <strong>${nameVal}</strong>! Your message details have been transferred to WhatsApp.<br>
+                            If WhatsApp didn't open automatically, <a href="${whatsappUrl}" target="_blank" style="color: #25D366; font-weight: 600; text-decoration: underline;">click here to send on WhatsApp</a>.
+                            <br><br>
                             <div class="swal-badge-box">
-                                <i class="bi bi-clock-history" aria-hidden="true"></i> Expected response: within 24 hours
+                                <i class="bi bi-whatsapp" aria-hidden="true" style="color: #25D366;"></i> WhatsApp Direct Connect Enabled
                             </div>
                         </div>
                     `,
@@ -593,7 +612,7 @@ const initContactForm = () => {
                     buttonsStyling: false
                 });
             }
-        }, randomDelay);
+        }, delay);
     });
 };
 

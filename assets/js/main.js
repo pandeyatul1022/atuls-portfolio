@@ -675,13 +675,25 @@ const initAOS = () => {
     AOS.init({ duration: 700, once: true, offset: 60 });
 };
 
+/**
+ * Main Application Bootstrapper
+ * Safe module execution with isolated error boundary wrappers
+ */
 document.addEventListener('DOMContentLoaded', () => {
-    new ThemeController();
-    new NavbarController();
-    initTypedText();
-    initStatsCounter();
-    initProjectsFilter();
-    initContactForm();
-    initBackToTop();
-    initAOS();
+    const safeExec = (fn, name) => {
+        try {
+            fn();
+        } catch (err) {
+            console.warn(`[Module Init Error: ${name}]`, err);
+        }
+    };
+
+    safeExec(() => new ThemeController(), 'ThemeController');
+    safeExec(() => new NavbarController(), 'NavbarController');
+    safeExec(() => initTypedText(), 'TypedText');
+    safeExec(() => initStatsCounter(), 'StatsCounter');
+    safeExec(() => initProjectsFilter(), 'ProjectsFilter');
+    safeExec(() => initContactForm(), 'ContactForm');
+    safeExec(() => initBackToTop(), 'BackToTop');
+    safeExec(() => initAOS(), 'AOS');
 });

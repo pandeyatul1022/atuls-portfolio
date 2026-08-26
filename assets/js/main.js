@@ -1,34 +1,18 @@
 'use strict';
 
 /**
- * Secondary Core Security Shield - Prevents bypassing security.js or modifying UI/code
- */
-/**
- * Secondary Core Security Shield & Interlock Guard
- * Prevents bypassing security.js, removing security tags, or modifying UI/code
+ * Domain Verification Check
  */
 (function verifyCoreIntegrity() {
-    const _sec = ['bG9jYWxob3N0','MTI3LjAuMC4x','Ojox','cGFuZGV5YXR1bDEwMjIuZ2l0aHViLmlv','YXR1bC1wYW5kZXkuY29t','YXR1bHMtcG9ydGZvbGlvLnZlcmNlbC5hcHA=','YXR1bHMtcG9ydGZvbGlvLm5ldGxpZnkuYXBw'];
+    const allowed = ['localhost', '127.0.0.1', '::1', 'pandeyatul1022.github.io', 'atul-pandey.com', 'atuls-portfolio.vercel.app', 'atuls-portfolio.netlify.app'];
     const current = (window.location.hostname || '').toLowerCase();
     
-    // Check if security.js has executed and verified integrity token
-    if (!window.__SECURITY_VERIFIED__ || window.__SEC_TOKEN__ !== 'AP_SEC_8928303867_VERIFIED') {
-        document.documentElement.innerHTML = '<div style="background:#06070a;color:#ef4444;height:100vh;display:flex;align-items:center;justify-content:center;font-family:sans-serif;text-align:center;padding:20px;"><div><h1 style="font-size:30px;font-weight:bold;">🛑 SECURITY INTEGRITY TAMPER DETECTED</h1><p style="color:#9ca3af;margin-top:12px;">Security shield script was tampered with or removed. Application execution halted.</p><p style="color:#ef4444;margin-top:16px;font-weight:bold;">Original Owner: Atul Pandey</p></div></div>';
-        throw new Error('Security Integrity Tamper: Execution terminated.');
-    }
-
     if (window.location.protocol !== 'file:' && current) {
-        const isOk = _sec.some(d => {
-            try { const dec = atob(d); return current === dec || current.endsWith('.' + dec); } catch(e) { return false; }
-        });
+        const isOk = allowed.some(d => current === d || current.endsWith('.' + d));
 
         if (!isOk) {
-            if (typeof window.__triggerCopyrightStrike === 'function') {
-                window.__triggerCopyrightStrike(`Core JS Guard: Domain '${current}' is not authorized to execute this portfolio logic.`);
-            } else {
-                document.documentElement.innerHTML = '<div style="background:#090a0f;color:#ef4444;height:100vh;display:flex;align-items:center;justify-content:center;font-family:sans-serif;text-align:center;padding:20px;"><div><h1 style="font-size:32px;">🛑 DMCA COPYRIGHT VIOLATION</h1><p style="color:#9ca3af;margin-top:10px;">Unauthorized source code modification or domain deployment detected.</p><p style="color:#ef4444;margin-top:15px;">Original Owner: Atul Pandey</p></div></div>';
-            }
-            throw new Error('DMCA Copyright Enforcement: Execution terminated on unauthorized domain.');
+            document.documentElement.innerHTML = '<div style="background:#090a0f;color:#ef4444;height:100vh;display:flex;align-items:center;justify-content:center;font-family:sans-serif;text-align:center;padding:20px;"><div><h1 style="font-size:32px;">🛑 UNAUTHORIZED DOMAIN</h1><p style="color:#9ca3af;margin-top:10px;">Domain deployment is restricted to official owner domain.</p><p style="color:#ef4444;margin-top:15px;">Original Owner: Atul Pandey</p></div></div>';
+            throw new Error('Unauthorized Domain Execution Terminated.');
         }
     }
 })();

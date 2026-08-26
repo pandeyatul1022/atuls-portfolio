@@ -2456,13 +2456,27 @@ body.nav-open {
 }
 
 /* ==========================================================================
-   Responsive Breakpoints & Auto-Adjust Layout System
+   Responsive Breakpoints & Auto-Adjust Layout System (Mobiles, Tablets, Desktops & 4K Displays)
    ========================================================================== */
+
+/* 1400px+ Ultra-Wide & 4K Display Optimization */
+@media (min-width: 1400px) {
+    .container-custom {
+        max-width: 1320px;
+    }
+    .hero__title {
+        font-size: 3.6rem;
+    }
+    .projects__grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+    }
+}
 
 /* 1200px Laptop & Desktop Optimizations */
 @media (max-width: 1200px) {
     .container-custom {
-        max-width: 960px;
+        max-width: 1140px;
     }
 
     .projects__grid {
@@ -2588,6 +2602,17 @@ body.nav-open {
         justify-content: center;
     }
 
+    .hero__avatar-wrapper {
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .hero__avatar-img {
+        width: 100%;
+        height: auto;
+        max-width: 320px;
+    }
+
     .floating-badge--1 {
         left: -10px;
     }
@@ -2625,7 +2650,7 @@ body.nav-open {
 /* 768px Small Tablet / Mobile Landscape Breakpoint */
 @media (max-width: 768px) {
     .section {
-        padding: 80px 0;
+        padding: 70px 0;
         min-height: auto;
     }
 
@@ -2679,6 +2704,14 @@ body.nav-open {
     .footer__social-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .hero__avatar-wrapper {
+        max-width: 280px;
+    }
+
+    .hero__avatar-img {
+        max-width: 280px;
+    }
 }
 
 /* 480px Compact Smartphone Breakpoint */
@@ -2702,7 +2735,7 @@ body.nav-open {
     }
 
     .hero__title {
-        font-size: clamp(1.85rem, 7.5vw, 2.3rem);
+        font-size: clamp(1.75rem, 7vw, 2.2rem);
     }
 
     .hero__actions {
@@ -2724,27 +2757,40 @@ body.nav-open {
     .contact-form,
     .education-card,
     .project-card__body {
-        padding: 22px 18px;
+        padding: 20px 16px;
     }
 
     .contact-info-card {
-        padding: 16px;
+        padding: 14px;
     }
 
     .back-to-top {
-        bottom: 20px;
-        right: 20px;
-        width: 44px;
-        height: 44px;
-        font-size: 1.3rem;
+        bottom: 18px;
+        right: 16px;
+        width: 42px;
+        height: 42px;
+        font-size: 1.2rem;
     }
 
     .whatsapp-float {
-        bottom: 74px;
-        right: 20px;
-        width: 44px;
-        height: 44px;
-        font-size: 1.4rem;
+        bottom: 68px;
+        right: 16px;
+        width: 42px;
+        height: 42px;
+        font-size: 1.3rem;
+    }
+}
+
+/* 360px Ultra-Compact Device Breakpoint (Small Androids, Foldables) */
+@media (max-width: 360px) {
+    .hero__avatar-wrapper {
+        max-width: 230px;
+    }
+    .hero__avatar-img {
+        max-width: 230px;
+    }
+    .footer__social-grid {
+        grid-template-columns: 1fr;
     }
 }
 

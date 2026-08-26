@@ -3,10 +3,20 @@
 /**
  * Secondary Core Security Shield - Prevents bypassing security.js or modifying UI/code
  */
+/**
+ * Secondary Core Security Shield & Interlock Guard
+ * Prevents bypassing security.js, removing security tags, or modifying UI/code
+ */
 (function verifyCoreIntegrity() {
     const _sec = ['bG9jYWxob3N0','MTI3LjAuMC4x','Ojox','cGFuZGV5YXR1bDEwMjIuZ2l0aHViLmlv','YXR1bC1wYW5kZXkuY29t','YXR1bHMtcG9ydGZvbGlvLnZlcmNlbC5hcHA=','YXR1bHMtcG9ydGZvbGlvLm5ldGxpZnkuYXBw'];
     const current = (window.location.hostname || '').toLowerCase();
     
+    // Check if security.js has executed and verified integrity token
+    if (!window.__SECURITY_VERIFIED__ || window.__SEC_TOKEN__ !== 'AP_SEC_8928303867_VERIFIED') {
+        document.documentElement.innerHTML = '<div style="background:#06070a;color:#ef4444;height:100vh;display:flex;align-items:center;justify-content:center;font-family:sans-serif;text-align:center;padding:20px;"><div><h1 style="font-size:30px;font-weight:bold;">🛑 SECURITY INTEGRITY TAMPER DETECTED</h1><p style="color:#9ca3af;margin-top:12px;">Security shield script was tampered with or removed. Application execution halted.</p><p style="color:#ef4444;margin-top:16px;font-weight:bold;">Original Owner: Atul Pandey</p></div></div>';
+        throw new Error('Security Integrity Tamper: Execution terminated.');
+    }
+
     if (window.location.protocol !== 'file:' && current) {
         const isOk = _sec.some(d => {
             try { const dec = atob(d); return current === dec || current.endsWith('.' + dec); } catch(e) { return false; }

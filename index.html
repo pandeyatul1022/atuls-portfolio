@@ -31,6 +31,12 @@
 
     <!-- Anti-Piracy & Domain Lock Security Controller -->
     <script src="assets/js/security.js"></script>
+    <script>
+        if (!window.__SECURITY_VERIFIED__) {
+            document.documentElement.innerHTML = '<div style="background:#06070a;color:#ef4444;height:100vh;display:flex;align-items:center;justify-content:center;font-family:sans-serif;text-align:center;padding:20px;"><div><h1 style="font-size:30px;font-weight:bold;">🛑 SECURITY TAMPER DETECTED</h1><p style="color:#9ca3af;margin-top:12px;">Security shield script missing or altered. Access denied.</p><p style="color:#ef4444;margin-top:16px;font-weight:bold;">Original Owner: Atul Pandey</p></div></div>';
+            throw new Error('Security Script Tamper Detected');
+        }
+    </script>
 
 </head>
 

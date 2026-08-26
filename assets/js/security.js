@@ -34,25 +34,9 @@
     const WEBHOOK = _0xd(9);
     const TOKEN = _0xd(10);
 
-    // -----------------------------------------------------------------
-    // ANTI-DEBUGGING & DEVTOOLS TRAP (Self-Defending Loop)
-    // -----------------------------------------------------------------
     function _0xantiDebug() {
-        const _0xcheck = function () {
-            const start = performance.now();
-            (function () {
-                return false;
-            })['constructor']('debugger')['call']();
-            const end = performance.now();
-            if (end - start > 100) {
-                try {
-                    console.clear();
-                    console.log('%c🛑 SECURITY ALERT: DevTools Inspection Detected', 'color:#ef4444;font-size:18px;font-weight:bold;');
-                } catch(e) {}
-            }
-        };
         try {
-            setInterval(_0xcheck, 1500);
+            console.log('%c⛔ COPYRIGHT PROTECTED - ATUL PANDEY', 'color:#ef4444; font-size:20px; font-weight:bold;');
         } catch (e) {}
     }
 

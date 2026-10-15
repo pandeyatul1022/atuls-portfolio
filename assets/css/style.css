@@ -1342,8 +1342,51 @@ body.nav-open {
     transition: transform 0.5s ease;
 }
 
+.project-card[data-category="extension"] .project-card__image-wrapper {
+    height: 320px;
+    aspect-ratio: auto;
+    padding-top: 12px;
+    background: #ffffff;
+}
+
+.project-card[data-category="extension"] .project-card__img {
+    object-fit: contain;
+}
+
+.project-card__img--dark {
+    display: none;
+}
+
+[data-theme="dark"] .project-card[data-category="extension"] .project-card__image-wrapper {
+    background: #111827;
+}
+
+[data-theme="dark"] .project-card[data-category="extension"] .project-card__img--light {
+    display: none;
+}
+
+[data-theme="dark"] .project-card[data-category="extension"] .project-card__img--dark {
+    display: block;
+}
+
 .project-card:hover .project-card__img {
     transform: scale(1.08);
+}
+
+.project-card[data-category="extension"]:hover .project-card__img {
+    transform: none;
+}
+
+@media (max-width: 991px) {
+    .project-card[data-category="extension"] .project-card__image-wrapper {
+        height: 360px;
+    }
+}
+
+@media (max-width: 576px) {
+    .project-card[data-category="extension"] .project-card__image-wrapper {
+        height: min(420px, 105vw);
+    }
 }
 
 .project-card__overlay {
@@ -2113,9 +2156,7 @@ body.nav-open {
     color: #10b981;
     font-size: 0.9rem;
     font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    display: block;
 }
 
 .form-status--error {
@@ -2127,9 +2168,19 @@ body.nav-open {
     color: #ef4444;
     font-size: 0.9rem;
     font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    display: block;
+}
+
+#contactFormStatus[hidden] {
+    display: none;
+}
+
+.form-status__link {
+    display: inline-block;
+    margin-top: 8px;
+    color: inherit;
+    font-weight: 700;
+    text-decoration: underline;
 }
 
 /* ==========================================================================
@@ -2646,6 +2697,7 @@ body.nav-open {
         display: flex;
         flex-direction: column;
         gap: 2px;
+        min-width: 0;
     }
 
     .navbar__mobile-name {
@@ -2678,34 +2730,6 @@ body.nav-open {
     .navbar__mobile-badge i {
         color: var(--ember);
         font-size: 0.75rem;
-    }
-
-    .navbar__mobile-socials {
-        display: flex;
-        align-items: center;
-        gap: 6px;
-    }
-
-    .mobile-social-btn {
-        width: 34px;
-        height: 34px;
-        border-radius: 50%;
-        background: var(--surface-solid);
-        border: 1px solid var(--line);
-        color: var(--ink-soft);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 0.9rem;
-        text-decoration: none;
-        transition: all 0.25s var(--ease-smooth);
-    }
-
-    .mobile-social-btn:hover {
-        color: var(--accent);
-        border-color: var(--accent);
-        background: rgba(99, 102, 241, 0.1);
-        transform: translateY(-2px);
     }
 
     .navbar__mobile-footer {

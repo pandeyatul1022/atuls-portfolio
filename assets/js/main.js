@@ -427,8 +427,11 @@ const initProjectsFilter = () => {
 const initContactForm = () => {
     const form = document.getElementById('contactForm');
     const submitBtn = document.getElementById('formSubmitBtn');
+    const formStatus = document.getElementById('contactFormStatus');
 
-    if (!form) return;
+    if (!form || !formStatus) return;
+
+    let isSubmitting = false;
 
     const fields = {
         name: {
@@ -515,8 +518,10 @@ const initContactForm = () => {
     });
 
     // Form submission handler
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
+
+        if (isSubmitting) return;
 
         let isFormValid = true;
 
@@ -548,9 +553,42 @@ const initContactForm = () => {
         const phoneNumber = '918928303867';
         const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappText)}`;
 
-        // 1. Send form data directly to your Email (atuls.pandey22@gmail.com) in background
+        let whatsappWindow = null;
         try {
-            fetch('https://formsubmit.co/ajax/atuls.pandey22@gmail.com', {
+            whatsappWindow = window.open(whatsappUrl, '_blank');
+            if (whatsappWindow) whatsappWindow.opener = null;
+        } catch (error) {
+            console.error('Could not open the WhatsApp draft:', error);
+        }
+        const whatsappOpened = Boolean(whatsappWindow);
+
+        isSubmitting = true;
+        formStatus.hidden = true;
+        formStatus.textContent = '';
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `<span>Submitting email...</span> <span class="dot-loader" aria-hidden="true"><span></span><span></span><span></span></span>`;
+        }
+
+        const showFormStatus = (type, message, includeWhatsAppLink) => {
+            formStatus.className = type === 'success' ? 'form-status--success' : 'form-status--error';
+            formStatus.textContent = message;
+
+            if (includeWhatsAppLink) {
+                const link = document.createElement('a');
+                link.className = 'form-status__link';
+                link.href = whatsappUrl;
+                link.target = '_blank';
+                link.rel = 'noopener noreferrer';
+                link.textContent = 'Open WhatsApp draft';
+                formStatus.append(' ', link);
+            }
+
+            formStatus.hidden = false;
+        };
+
+        try {
+            const response = await fetch('https://formsubmit.co/ajax/atuls.pandey22@gmail.com', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -563,24 +601,14 @@ const initContactForm = () => {
                     _subject: `New Portfolio Inquiry from ${nameVal}: ${subjectVal}`,
                     message: messageVal
                 })
-            }).catch(() => {});
-        } catch (e) {}
+            });
+            const result = await response.json();
 
-        // 2. Open WhatsApp in a new tab immediately (prevents browser popup blocker)
-        window.open(whatsappUrl, '_blank');
+            if (!response.ok || !result.success) {
+                throw new Error(result.message || `Email request failed with status ${response.status}.`);
+            }
 
-        // Show dot pulse animation on submit button
-        if (submitBtn) {
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = `<span>Sending...</span> <span class="dot-loader" aria-hidden="true"><span></span><span></span><span></span></span>`;
-        }
-
-        const delay = 1000;
-
-        setTimeout(() => {
             form.reset();
-
-            // Clear all validation states
             Object.keys(fields).forEach((key) => {
                 const field = fields[key];
                 if (field.input) {
@@ -591,40 +619,27 @@ const initContactForm = () => {
                 }
             });
 
+            const whatsappStatus = whatsappOpened
+                ? 'WhatsApp opened with your message as a draft. Press Send in WhatsApp to deliver it.'
+                : 'WhatsApp did not open automatically. Use the link below to open your message draft.';
+            showFormStatus('success', `Email request submitted successfully. ${whatsappStatus}`, !whatsappOpened);
+        } catch (error) {
+            console.error('Contact form email submission failed:', error);
+            const whatsappStatus = whatsappOpened
+                ? 'The WhatsApp draft is open; press Send there if you want to send your message.'
+                : 'Your message is still here. You can also open the WhatsApp draft using the link below.';
+            showFormStatus(
+                'error',
+                `Email could not be submitted. ${whatsappStatus}`,
+                !whatsappOpened
+            );
+        } finally {
+            isSubmitting = false;
             if (submitBtn) {
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = `<span>Send Message</span> <i class="bi bi-send-fill" aria-hidden="true"></i>`;
             }
-
-            // Trigger Ultra-Attractive SweetAlert2 Success Modal Popup
-            if (typeof Swal !== 'undefined') {
-                const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-                Swal.fire({
-                    title: '<span class="text-gradient">Message Sent to WhatsApp!</span>',
-                    html: `
-                        <div class="custom-swal-html">
-                            Thank you <strong>${nameVal}</strong>! Your message details have been transferred to WhatsApp.<br>
-                            If WhatsApp didn't open automatically, <a href="${whatsappUrl}" target="_blank" style="color: #25D366; font-weight: 600; text-decoration: underline;">click here to send on WhatsApp</a>.
-                            <br><br>
-                            <div class="swal-badge-box">
-                                <i class="bi bi-whatsapp" aria-hidden="true" style="color: #25D366;"></i> WhatsApp Direct Connect Enabled
-                            </div>
-                        </div>
-                    `,
-                    icon: 'success',
-                    confirmButtonText: 'Awesome, Got It!',
-                    background: isDark ? '#18181b' : '#ffffff',
-                    color: isDark ? '#f4f4f5' : '#18181b',
-                    customClass: {
-                        popup: 'custom-swal-popup',
-                        title: 'custom-swal-title',
-                        icon: 'custom-swal-icon',
-                        confirmButton: 'custom-swal-confirm-btn'
-                    },
-                    buttonsStyling: false
-                });
-            }
-        }, delay);
+        }
     });
 };
 

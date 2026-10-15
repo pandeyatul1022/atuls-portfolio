@@ -50,7 +50,7 @@ It features modern glassmorphism aesthetic elements, smooth scroll-driven animat
   - **Projects**: Visual cards detailing full-stack applications with demo links.
   - **Experience & Education**: Timeline view of career background and qualifications.
   - **Contact Form**: Direct contact form integration.
-- 📄 **Resume Download**: Direct access to downloadable PDF resume (`Atul_Pandey.pdf`).
+- 📄 **Resume**: View the PDF resume in a new browser tab (`Atul_Pandey.pdf`).
 - 🛡️ **Anti-Piracy & Domain-Lock Controller**: Integrated client-side security engine (`security.js`) preventing unauthorized public mirror hosting.
 
 ---

@@ -2545,6 +2545,14 @@ body.nav-open {
         display: none;
     }
 
+    .navbar__actions {
+        flex-shrink: 0;
+    }
+
+    .navbar__resume {
+        display: none;
+    }
+
     .navbar__burger {
         display: flex;
     }
@@ -2567,8 +2575,10 @@ body.nav-open {
         padding: 16px;
         display: flex;
         flex-direction: column;
-        max-height: calc(100vh - 80px);
+        max-height: calc(100vh - var(--nav-h-scrolled));
+        max-height: calc(100dvh - var(--nav-h-scrolled));
         overflow-y: auto;
+        overscroll-behavior-y: contain;
     }
 
     [data-theme="dark"] .navbar__menu {

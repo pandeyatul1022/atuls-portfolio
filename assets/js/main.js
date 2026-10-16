@@ -255,6 +255,7 @@ class NavbarController {
 
     openMenu() {
         this.isMenuOpen = true;
+        document.body.classList.add('nav-open');
         this.menu.classList.add('is-open');
         this.menu.setAttribute('aria-hidden', 'false');
         if (this.burger) this.burger.setAttribute('aria-expanded', 'true');
@@ -262,6 +263,7 @@ class NavbarController {
 
     closeMenu() {
         this.isMenuOpen = false;
+        document.body.classList.remove('nav-open');
         this.menu.classList.remove('is-open');
         this.menu.setAttribute('aria-hidden', 'true');
         if (this.burger) this.burger.setAttribute('aria-expanded', 'false');

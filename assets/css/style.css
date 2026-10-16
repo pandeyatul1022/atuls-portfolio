@@ -479,22 +479,6 @@ body.nav-open {
     overflow: hidden;
 }
 
-/* Subtle background ambient radial glow */
-.hero-section::before {
-    content: '';
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 65%);
-    filter: blur(80px);
-    opacity: 0.45;
-    pointer-events: none;
-    z-index: 0;
-}
-
 .hero__container {
     position: relative;
     z-index: 1;
@@ -702,7 +686,7 @@ body.nav-open {
     justify-content: center;
     background: var(--surface-solid);
     border: 1px solid var(--line);
-    color: var(--ink);
+    color: var(--social-icon-color, var(--social-brand));
     font-size: 1.15rem;
     text-decoration: none;
     box-shadow: var(--shadow-sm);
@@ -710,11 +694,50 @@ body.nav-open {
 }
 
 .social-icon-btn:hover {
-    background: var(--accent);
+    background: var(--social-brand);
     color: #ffffff;
-    border-color: var(--accent);
+    border-color: var(--social-brand);
     transform: translateY(-4px) scale(1.08);
     box-shadow: var(--shadow-glow);
+}
+
+.social-icon-btn--github,
+.social-pill-btn--github {
+    --social-brand: #181717;
+}
+
+.social-icon-btn--linkedin,
+.social-pill-btn--linkedin {
+    --social-brand: #0a66c2;
+}
+
+.social-icon-btn--x,
+.social-pill-btn--x {
+    --social-brand: #000000;
+}
+
+.social-icon-btn--email,
+.social-pill-btn--email {
+    --social-brand: #ea4335;
+}
+
+[data-theme="dark"] .social-icon-btn--x,
+[data-theme="dark"] .social-pill-btn--x {
+    --social-brand: #ffffff;
+}
+
+[data-theme="dark"] .social-icon-btn--github,
+[data-theme="dark"] .social-pill-btn--github {
+    --social-icon-color: #ffffff;
+}
+
+.social-icon-btn--x:hover,
+[data-theme="dark"] .social-icon-btn--x:hover {
+    color: #ffffff;
+}
+
+[data-theme="dark"] .social-icon-btn--x:hover {
+    color: #090d16;
 }
 
 /* --- Right Column: Visual Avatar Card --- */
@@ -2399,14 +2422,22 @@ body.nav-open {
 
 .social-pill-btn i {
     font-size: 0.95rem;
-    color: var(--ink);
+    color: var(--social-icon-color, var(--social-brand));
 }
 
 .social-pill-btn:hover {
-    border-color: var(--accent);
-    color: var(--accent);
+    border-color: var(--social-brand);
+    color: #ffffff;
     transform: translateY(-2px);
-    background: var(--surface-solid);
+    background: var(--social-brand);
+}
+
+.social-pill-btn:hover i {
+    color: inherit;
+}
+
+[data-theme="dark"] .social-pill-btn--x:hover {
+    color: #090d16;
 }
 
 /* Refined Bottom Bar */
@@ -2582,7 +2613,7 @@ body.nav-open {
     }
 
     [data-theme="dark"] .navbar__menu {
-        background: rgba(15, 23, 42, 0.96);
+        background: var(--surface-solid);
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
     }
 
@@ -2598,8 +2629,13 @@ body.nav-open {
         width: 100%;
         background: transparent;
         border: none;
+        border-radius: 0;
         padding: 0;
         gap: 2px;
+    }
+
+    [data-theme="dark"] .navbar__links {
+        background: transparent;
     }
 
     .navbar__links li {
